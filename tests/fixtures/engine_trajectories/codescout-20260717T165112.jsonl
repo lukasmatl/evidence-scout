@@ -1,0 +1,7 @@
+{"event":"tool_observation","turn":1,"observation":{"error":"Absolute paths and traversal are not allowed."}}
+{"event":"tool_observation","turn":2,"observation":{"error":"Absolute paths and traversal are not allowed."}}
+{"event":"tool_observation","turn":3,"observation":{"error":"Command 'pwd' is not an approved reader."}}
+{"event":"tool_observation","turn":4,"observation":{"error":"Shell redirection and compound commands are not allowed."}}
+{"event":"tool_observation","turn":5,"observation":{"error":"Absolute paths and traversal are not allowed."}}
+{"event":"tool_observation","turn":6,"observation":{"command":"ls","exit_code":0}}
+{"event":"loop_error","code":"turn_budget_exhausted","message":"CodeScout exhausted its turn budget without localization_finish."}

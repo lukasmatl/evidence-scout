@@ -1,0 +1,40 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Vendor Flight Plan API",
+    "version": "2026-06-20"
+  },
+  "paths": {
+    "/vendor/slots": {
+      "get": {
+        "operationId": "listVendorSlots",
+        "tags": ["Vendor Slots"],
+        "responses": {
+          "200": {
+            "description": "Available vendor slots.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VendorSlotList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "VendorSlotList": {
+        "type": "object",
+        "properties": {
+          "slots": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

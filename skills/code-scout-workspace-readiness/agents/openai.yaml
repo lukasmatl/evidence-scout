@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workspace Readiness"
+  short_description: "Check graph-index and model-provider readiness, not receipts"
+  default_prompt: "Use $code-scout-workspace-readiness to assess graph-index freshness and model-provider setup; inspect verification receipt applicability through change evidence instead."

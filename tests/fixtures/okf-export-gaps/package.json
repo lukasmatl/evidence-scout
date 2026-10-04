@@ -1,0 +1,13 @@
+{
+  "name": "okf-export-gaps",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "build": "npm --workspace frontend run build"
+  },
+  "devDependencies": {
+    "typescript": "5.5.4"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Change Impact Review"
+  short_description: "Review cited Git or retained checkpoint impact"
+  default_prompt: "Use $code-scout-impact-review to review staged/base Git changes or a supplied retained change/run/session checkpoint, then produce a cited inspection and validation plan without changing the workspace."

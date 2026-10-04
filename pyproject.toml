@@ -1,0 +1,73 @@
+[project]
+name = "code-scout"
+version = "0.1.0"
+description = "Local-first architecture memory CLI for software workspaces."
+requires-python = ">=3.11"
+authors = [
+    { name = "code-scout contributors" },
+]
+dependencies = []
+
+[project.optional-dependencies]
+tree-sitter-all = [
+    "tree-sitter>=0.21",
+    "tree-sitter-python",
+    "tree-sitter-javascript",
+    "tree-sitter-typescript",
+    "tree-sitter-go",
+    "tree-sitter-rust",
+    "tree-sitter-java",
+    "tree-sitter-c",
+    "tree-sitter-cpp",
+    "tree-sitter-ruby",
+    "tree-sitter-c-sharp",
+    "tree-sitter-kotlin",
+    "tree-sitter-scala",
+    "tree-sitter-php",
+    "tree-sitter-swift",
+    "tree-sitter-lua",
+    "tree-sitter-zig",
+    "tree-sitter-dart",
+    "tree-sitter-elixir",
+    "tree-sitter-julia",
+    "tree-sitter-bash",
+    "tree-sitter-sql",
+]
+
+[project.scripts]
+code-scout = "code_scout.commands.cli:app"
+
+[dependency-groups]
+dev = []
+
+[tool.uv]
+package = true
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/code_scout"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+extend-exclude = ["esf"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "UP",
+    "B",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+pythonpath = ["src"]
+testpaths = ["tests"]

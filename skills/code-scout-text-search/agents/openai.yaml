@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Scout Text Search"
+  short_description: "Use optional tgrep for bounded exact search"
+  default_prompt: "Use $code-scout-text-search to run a bounded exact search and preserve Code Scout evidence boundaries."

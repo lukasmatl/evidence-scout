@@ -1,0 +1,42 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pyre/
+.tox/
+.nox/
+
+
+# Virtual environments and local tooling state
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+.uv-cache/
+
+# Build and packaging outputs
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Test, coverage, and type-check outputs
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+junit.xml
+.hypothesis/
+
+# code-scout workspace state and generated artifacts
+.code-scout/
+.code-scout.*
+.idea/
+.ralph-tui/
+.DS_Store

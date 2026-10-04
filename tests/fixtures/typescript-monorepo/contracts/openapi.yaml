@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: Sample Users API
+  version: v1
+paths:
+  /users:
+    get:
+      operationId: listUsers
+      tags:
+        - Users
+      summary: List users
+      responses:
+        200:
+          description: Users returned
+          content:
+            application/json:
+              schema:
+                title: UserListResponse
+                type: array
+  /users/{id}:
+    get:
+      operationId: getUser
+      tags:
+        - Users
+      summary: Get a user
+      responses:
+        200:
+          description: User returned
+          content:
+            application/json:
+              schema:
+                title: User
+                type: object
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string

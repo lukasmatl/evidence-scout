@@ -1,0 +1,6 @@
+services:
+  flight-plan-api:
+    build:
+      context: ./backend/src/FlightPlan.Api
+    ports:
+      - "8080:8080"

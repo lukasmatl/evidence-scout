@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "1.0",
+  "scanMetadata": {
+    "completedAtUtc": "2026-07-16T12:00:00Z",
+    "rootPath": "."
+  },
+  "nodes": [
+    {
+      "id": "interface:IOrders",
+      "type": "Interface",
+      "displayName": "IOrders",
+      "repositoryName": "contracts",
+      "projectName": "Contracts",
+      "certainty": "Certain",
+      "sourceLocation": {"filePath": "src/Orders.cs", "startLine": 1, "endLine": 1}
+    },
+    {
+      "id": "method:OrdersService.Get",
+      "type": "Method",
+      "displayName": "OrdersService.Get",
+      "repositoryName": "orders",
+      "projectName": "Orders.Api",
+      "certainty": "Certain",
+      "sourceLocation": {"filePath": "src/Orders.cs", "startLine": 3, "endLine": 5}
+    },
+    {
+      "id": "endpoint:GET-orders",
+      "type": "Endpoint",
+      "displayName": "GET /api/orders/{id}",
+      "repositoryName": "orders",
+      "projectName": "Orders.Api",
+      "certainty": "Inferred",
+      "sourceLocation": {"filePath": "src/Orders.cs", "startLine": 7, "endLine": 8},
+      "metadata": {"httpMethod": "GET", "route": "/api/orders/{id}"}
+    },
+    {
+      "id": "table:orders",
+      "type": "Table",
+      "displayName": "dbo.orders",
+      "repositoryName": "data",
+      "projectName": "Orders.Data",
+      "certainty": "Probable",
+      "metadata": {"schema": "dbo", "table": "orders"}
+    },
+    {
+      "id": "method:invalid",
+      "type": "Method",
+      "displayName": "Invalid.Source",
+      "repositoryName": "orders",
+      "projectName": "Orders.Api",
+      "certainty": "Ambiguous",
+      "sourceLocation": {"filePath": "../outside.cs", "startLine": 99, "endLine": 100}
+    }
+  ],
+  "edges": [
+    {
+      "id": "implements-1",
+      "sourceId": "method:OrdersService.Get",
+      "targetId": "interface:IOrders",
+      "type": "IMPLEMENTS",
+      "certainty": "Certain"
+    },
+    {
+      "id": "di-1",
+      "sourceId": "interface:IOrders",
+      "targetId": "method:OrdersService.Get",
+      "type": "DI_RESOLVES_TO",
+      "certainty": "Certain",
+      "sourceLocation": {"filePath": "src/Orders.cs", "startLine": 10, "endLine": 10}
+    },
+    {
+      "id": "http-1",
+      "sourceId": "endpoint:GET-orders",
+      "targetId": "method:OrdersService.Get",
+      "type": "HTTP_CALLS",
+      "certainty": "Inferred",
+      "sourceLocation": {"filePath": "src/Orders.cs", "startLine": 8, "endLine": 8},
+      "metadata": {"method": "GET", "uri": "http://orders/api/orders/{id}"}
+    },
+    {
+      "id": "lineage-1",
+      "sourceId": "method:OrdersService.Get",
+      "targetId": "table:orders",
+      "type": "READS_TABLE",
+      "certainty": "Probable",
+      "sourceLocation": {"filePath": "src/Orders.cs", "startLine": 4, "endLine": 4},
+      "metadata": {"dbContext": "OrdersDbContext", "entity": "Order"}
+    },
+    {
+      "id": "ambiguous-http",
+      "sourceId": "endpoint:GET-orders",
+      "targetId": "method:invalid",
+      "type": "RESOLVES_TO_SERVICE",
+      "certainty": "Ambiguous",
+      "unresolved": true
+    }
+  ],
+  "impactPaths": [
+    {
+      "id": "impact:endpoint-to-table",
+      "nodeIds": ["endpoint:GET-orders", "method:OrdersService.Get", "table:orders"],
+      "edgeIds": ["http-1", "lineage-1"],
+      "certainty": "Inferred",
+      "unresolved": false
+    }
+  ],
+  "warnings": [],
+  "unresolved": [
+    {
+      "id": "ambiguous-http",
+      "sourceId": "endpoint:GET-orders",
+      "targetId": "method:invalid",
+      "type": "RESOLVES_TO_SERVICE",
+      "certainty": "Ambiguous",
+      "reason": "multiple matching service routes"
+    }
+  ],
+  "statistics": {"nodeCount": 5, "edgeCount": 5}
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence Question Docs"
+  short_description: "Create cited source or receipt-scoped codebase docs"
+  default_prompt: "Use $code-scout-evidence-question-docs to answer this codebase question with cited source evidence or scoped stored receipt evidence."

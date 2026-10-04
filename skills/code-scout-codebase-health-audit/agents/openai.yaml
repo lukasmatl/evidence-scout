@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codebase Health Audit"
+  short_description: "Audit health with source evidence and scoped receipt evidence"
+  default_prompt: "Use $code-scout-codebase-health-audit to produce a cited health audit, keeping graph/index state and any historical receipt applicability separate."

@@ -1,0 +1,14 @@
+{
+  "name": "@fixture/web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "5.51.1"
+  },
+  "devDependencies": {
+    "typescript": "5.5.4"
+  }
+}

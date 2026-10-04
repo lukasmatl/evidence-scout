@@ -1,0 +1,13 @@
+schema_version = 1
+
+[profiles.demo]
+environment_allowlist = ["PATH", "LANG", "TMPDIR"]
+
+[profiles.demo.repositories.api]
+protected_paths = ["scripts/check.py"]
+
+[[profiles.demo.steps]]
+id = "api-check"
+scope = "repository"
+repository = "api"
+argv = ["python3", "scripts/check.py"]

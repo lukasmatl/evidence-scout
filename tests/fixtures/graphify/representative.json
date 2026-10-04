@@ -1,0 +1,123 @@
+{
+  "module_graph": {
+    "modules": [
+      {
+        "repository_id": "workspace",
+        "path": "src/users.controller.ts",
+        "name": "users.controller",
+        "confidence": 0.9,
+        "metadata": {"graph": "module"}
+      }
+    ]
+  },
+  "symbol_graph": {
+    "symbols": [
+      {
+        "repository_id": "workspace",
+        "file_path": "src/users.controller.ts",
+        "name": "UsersController",
+        "kind": "class",
+        "qualified_name": "UsersController",
+        "start_line": 3,
+        "end_line": 12,
+        "confidence": 0.92,
+        "metadata": {"graph": "symbol"}
+      },
+      {
+        "repository_id": "workspace",
+        "file_path": "src/users.service.ts",
+        "name": "UsersService",
+        "kind": "class",
+        "qualified_name": "UsersService",
+        "start_line": 2,
+        "end_line": 9,
+        "confidence": 0.92,
+        "metadata": {"graph": "symbol"}
+      }
+    ]
+  },
+  "dependency_graph": {
+    "dependencies": [
+      {
+        "repository_id": "workspace",
+        "source_path": "src/users.controller.ts",
+        "target_path": "src/users.service.ts",
+        "relation_type": "imports",
+        "confidence": 0.86,
+        "evidence": [
+          {
+            "file_path": "src/users.controller.ts",
+            "start_line": 1,
+            "end_line": 1,
+            "confidence": 0.86,
+            "metadata": {"repository_id": "workspace", "import": "./users.service"}
+          }
+        ]
+      }
+    ]
+  },
+  "call_graph": {
+    "calls": [
+      {
+        "repository_id": "workspace",
+        "source_path": "src/users.controller.ts",
+        "source_name": "UsersController",
+        "target_path": "src/users.service.ts",
+        "target_name": "UsersService",
+        "confidence": 0.81,
+        "metadata": {"call": "constructor_injection"}
+      }
+    ]
+  },
+  "repository_graph": {
+    "services": [
+      {
+        "id": "service:workspace:users-api",
+        "name": "Users API",
+        "repository_id": "workspace"
+      }
+    ],
+    "contracts": [
+      {
+        "id": "contract:workspace:graphify:get:users-id",
+        "name": "GET /users/:id",
+        "kind": "http",
+        "method": "GET",
+        "path": "/users/:id",
+        "producer_hint": "UsersController",
+        "evidence": [
+          {
+            "file_path": "src/users.controller.ts",
+            "start_line": 7,
+            "end_line": 7,
+            "confidence": 0.88,
+            "metadata": {"repository_id": "workspace"}
+          }
+        ]
+      }
+    ],
+    "concepts": [
+      {
+        "id": "concept:workspace:users",
+        "name": "Users"
+      }
+    ],
+    "edges": [
+      {
+        "source_type": "service",
+        "source_id": "service:workspace:users-api",
+        "target_type": "contract",
+        "target_id": "contract:workspace:graphify:get:users-id",
+        "relation_type": "serves",
+        "confidence": 0.84,
+        "evidence": [
+          {
+            "file_path": "src/users.controller.ts",
+            "confidence": 0.84,
+            "metadata": {"repository_id": "workspace"}
+          }
+        ]
+      }
+    ]
+  }
+}

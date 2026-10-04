@@ -1,0 +1,4 @@
+interface:
+  display_name: "Change Verification"
+  short_description: "Execute frozen gates or inspect receipts—no index or model"
+  default_prompt: "Use $code-scout-change-verification to execute this explicit workspace verification session or inspect its receipt without static search, a scan, or a model."
